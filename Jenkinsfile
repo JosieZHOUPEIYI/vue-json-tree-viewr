@@ -4,12 +4,15 @@ pipeline {
     stage('Build') {
         steps {
             echo 'Building....'
+            echo "execute install#################"
+            tnpm install || exit 1
+            echo "execute install done#################"
         }
     }
 
     stage('Test') {
       steps {
-        echo 'Testing..'
+        echo 'Testing.....'
       }
     }
 
